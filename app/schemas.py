@@ -18,6 +18,12 @@ class FolderResponse(BaseModel):
     location: str
     class Config:  #this sets the sqlalchemy model to be recongnised by pydantic model
         orm_mode = True
+class FolderDelete(FolderCreate):
+    pass
+class FolderUpdate(BaseModel):
+    location: str
+    oldName: str
+    newName: str
 
 
 class FileCreate(BaseModel):
